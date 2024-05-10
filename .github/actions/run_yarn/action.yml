@@ -1,0 +1,21 @@
+name: run_yarn
+runs:
+  using: composite
+  steps:
+  - name: restore_cache
+    uses: actions/cache@v3.3.2
+    with:
+      key: v1-yarn-{{ .Branch }}
+      path: UPDATE_ME
+      restore-keys: v1-yarn-{{ .Branch }}
+  - name: Yarn Install
+    run: yarn install --frozen-lockfile --no-progress --non-interactive --cache-folder ~/.cache/yarn
+    working-directory: "~/react-native-website"
+    shell: bash
+  - name: save_cache
+    uses: actions/cache@v3.3.2
+    with:
+      path: |-
+        node_modules
+        ~/.cache/yarn
+      key: v1-yarn-{{ .Branch }}
