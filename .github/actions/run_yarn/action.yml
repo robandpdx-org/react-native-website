@@ -8,9 +8,6 @@ runs:
       key: v1-yarn-${{ github.base_ref }}
       path: UPDATE_ME
       restore-keys: v1-yarn-${{ github.base_ref }}
-  - name: Yarn Install
-    run: yarn install --frozen-lockfile --no-progress --non-interactive --cache-folder ~/.cache/yarn
-    shell: bash
   - name: save_cache
     uses: actions/cache@v3.3.2
     with:
