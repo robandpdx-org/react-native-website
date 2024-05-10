@@ -17,4 +17,4 @@ runs:
       path: |-
         node_modules
         ~/.cache/yarn
-      key: v1-yarn-{{ .Branch }}
+      key: v1-yarn-${{ github.base_ref }}
