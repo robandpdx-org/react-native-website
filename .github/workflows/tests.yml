@@ -23,6 +23,7 @@ jobs:
     - uses: actions/setup-node@v4
       with:
         node-version: 'lts/*'
+        cache: yarn
     - uses: "./.github/actions/restore_cache_checkout"
     - uses: "./.github/actions/run_yarn"
     - run: yarn ci:lint
@@ -35,6 +36,7 @@ jobs:
     - uses: actions/setup-node@v4
       with:
         node-version: 'lts/*'
+        cache: yarn
     - uses: "./.github/actions/restore_cache_checkout"
     - uses: "./.github/actions/run_yarn"
     - run: yarn build
