@@ -28,7 +28,7 @@ jobs:
     - uses: "./.github/actions/run_yarn"
     - uses: borales/actions-yarn@v4
       with:
-        cmd: add -W
+        cmd: install
     - uses: borales/actions-yarn@v4
       with:
         cmd: ci:lint
@@ -46,7 +46,7 @@ jobs:
     - uses: "./.github/actions/run_yarn"
     - uses: borales/actions-yarn@v4
       with:
-        cmd: add -W
+        cmd: install
     - uses: borales/actions-yarn@v4
       with:
         cmd: build
