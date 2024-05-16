@@ -28,10 +28,7 @@ jobs:
     - uses: "./.github/actions/run_yarn"
     - uses: borales/actions-yarn@v4
       with:
-        cmd: install
-    - uses: borales/actions-yarn@v4
-      with:
-        cmd: yarn ci:lint
+        cmd: install && yarn ci:lint
   build:
     runs-on: ubuntu-latest
     env:
@@ -46,7 +43,4 @@ jobs:
     - uses: "./.github/actions/run_yarn"
     - uses: borales/actions-yarn@v4
       with:
-        cmd: install
-    - uses: borales/actions-yarn@v4
-      with:
-        cmd: yarn build
+        cmd: install && yarn build
