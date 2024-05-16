@@ -26,9 +26,12 @@ jobs:
         cache: yarn
     - uses: "./.github/actions/restore_cache_checkout"
     - uses: "./.github/actions/run_yarn"
-    - run: |
-        yarn update
-        yarn ci:lint
+    - uses: borales/actions-yarn@v4
+      with:
+        cmd: install
+    - uses: borales/actions-yarn@v4
+      with:
+        cmd: yarn ci:lint
   build:
     runs-on: ubuntu-latest
     env:
@@ -41,6 +44,9 @@ jobs:
         cache: yarn
     - uses: "./.github/actions/restore_cache_checkout"
     - uses: "./.github/actions/run_yarn"
-    - run: |
-        yarn update
-        yarn build
+    - uses: borales/actions-yarn@v4
+      with:
+        cmd: install
+    - uses: borales/actions-yarn@v4
+      with:
+        cmd: yarn build
