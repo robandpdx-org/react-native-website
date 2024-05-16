@@ -26,7 +26,9 @@ jobs:
         cache: yarn
     - uses: "./.github/actions/restore_cache_checkout"
     - uses: "./.github/actions/run_yarn"
-    - run: yarn ci:lint
+    - run: |
+        yarn install
+        yarn ci:lint
   build:
     runs-on: ubuntu-latest
     env:
@@ -39,4 +41,6 @@ jobs:
         cache: yarn
     - uses: "./.github/actions/restore_cache_checkout"
     - uses: "./.github/actions/run_yarn"
-    - run: yarn build
+    - run: |
+        yarn install
+        yarn build
