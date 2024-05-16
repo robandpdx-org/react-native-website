@@ -28,6 +28,9 @@ jobs:
     - uses: "./.github/actions/run_yarn"
     - uses: borales/actions-yarn@v4
       with:
+        cmd: add -W
+    - uses: borales/actions-yarn@v4
+      with:
         cmd: ci:lint
   build:
     runs-on: ubuntu-latest
@@ -41,6 +44,9 @@ jobs:
         cache: yarn
     - uses: "./.github/actions/restore_cache_checkout"
     - uses: "./.github/actions/run_yarn"
+    - uses: borales/actions-yarn@v4
+      with:
+        cmd: add -W
     - uses: borales/actions-yarn@v4
       with:
         cmd: build
